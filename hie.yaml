@@ -1,13 +1,10 @@
 cradle:
-  stack:
-    - path: "./lib"
-      component: "proteome:lib"
+  cabal:
+    - path: "./packages/proteome/lib"
+      component: "lib:proteome"
 
-    - path: "./app/Main.hs"
+    - path: "./packages/proteome/app"
       component: "proteome:exe:proteome"
 
-    - path: "./app/Paths_proteome.hs"
-      component: "proteome:exe:proteome"
-
-    - path: "./test/u"
-      component: "proteome:test:proteome-unit"
+    - path: "./packages/test/test"
+      component: "proteome-test:test:proteome-unit"

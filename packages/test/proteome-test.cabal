@@ -1,0 +1,272 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           proteome-test
+version:        0.3.17.0
+synopsis:       Neovim Project Manager, Tests
+description:    Please see the README on GitHub at <https://github.com/tek/ribosome>
+category:       Neovim
+homepage:       https://github.com/tek/ribosome#readme
+bug-reports:    https://github.com/tek/ribosome/issues
+author:         Torsten Schmits
+maintainer:     tek@tryp.io
+copyright:      2021 Torsten Schmits
+license:        BSD-2-Clause-Patent
+license-file:   LICENSE
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/tek/ribosome
+
+library
+  exposed-modules:
+      Keep
+  other-modules:
+      Paths_proteome_test
+  hs-source-dirs:
+      lib
+  default-extensions:
+      AllowAmbiguousTypes
+      ApplicativeDo
+      BangPatterns
+      BinaryLiterals
+      BlockArguments
+      ConstraintKinds
+      DataKinds
+      DefaultSignatures
+      DeriveAnyClass
+      DeriveDataTypeable
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveLift
+      DeriveTraversable
+      DerivingStrategies
+      DisambiguateRecordFields
+      DoAndIfThenElse
+      DuplicateRecordFields
+      EmptyDataDecls
+      ExistentialQuantification
+      FlexibleContexts
+      FlexibleInstances
+      FunctionalDependencies
+      GADTs
+      GeneralizedNewtypeDeriving
+      InstanceSigs
+      KindSignatures
+      LambdaCase
+      LiberalTypeSynonyms
+      MultiParamTypeClasses
+      MultiWayIf
+      NamedFieldPuns
+      OverloadedStrings
+      OverloadedLists
+      PackageImports
+      PartialTypeSignatures
+      PatternGuards
+      PatternSynonyms
+      PolyKinds
+      QuantifiedConstraints
+      QuasiQuotes
+      RankNTypes
+      RecordWildCards
+      RecursiveDo
+      ScopedTypeVariables
+      StandaloneDeriving
+      TemplateHaskell
+      TupleSections
+      TypeApplications
+      TypeFamilies
+      TypeFamilyDependencies
+      TypeOperators
+      TypeSynonymInstances
+      UndecidableInstances
+      UnicodeSyntax
+      ViewPatterns
+  ghc-options: -Wall -Wredundant-constraints -Wsimplifiable-class-constraints
+  build-depends:
+      aeson
+    , base ==4.*
+    , bytestring
+    , chiasma
+    , composition
+    , composition-extra
+    , conduit
+    , containers
+    , cornea
+    , data-default
+    , directory
+    , either
+    , exceptions
+    , filepath
+    , free
+    , hslogger
+    , lens
+    , lifted-async
+    , lifted-base
+    , messagepack
+    , monad-control
+    , mtl
+    , nvim-hs
+    , path
+    , path-io
+    , prettyprinter
+    , prettyprinter-ansi-terminal
+    , process
+    , proteome
+    , relude >=0.7 && <1.2
+    , resourcet
+    , ribosome
+    , template-haskell
+    , text
+    , transformers
+    , typed-process
+    , unix
+    , unliftio
+  mixins:
+      base hiding (Prelude)
+    , proteome hiding (Proteome.Prelude)
+    , proteome (Proteome.Prelude as Prelude)
+  default-language: Haskell2010
+
+test-suite proteome-unit
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Proteome.Test.AddFTest
+      Proteome.Test.AddMenuTest
+      Proteome.Test.AddTest
+      Proteome.Test.BuffersTest
+      Proteome.Test.Config
+      Proteome.Test.ConfigTest
+      Proteome.Test.CycleTest
+      Proteome.Test.DiagTest
+      Proteome.Test.FilenameTest
+      Proteome.Test.FilesTest
+      Proteome.Test.GrepTest
+      Proteome.Test.InitTest
+      Proteome.Test.MruTest
+      Proteome.Test.MultiTagsTest
+      Proteome.Test.PersistLoadTest
+      Proteome.Test.PersistStoreTest
+      Proteome.Test.Project
+      Proteome.Test.ReplaceTest
+      Proteome.Test.ResolveTest
+      Proteome.Test.TagsTest
+      Proteome.Test.Unit
+      Paths_proteome_test
+  hs-source-dirs:
+      test
+  default-extensions:
+      AllowAmbiguousTypes
+      ApplicativeDo
+      BangPatterns
+      BinaryLiterals
+      BlockArguments
+      ConstraintKinds
+      DataKinds
+      DefaultSignatures
+      DeriveAnyClass
+      DeriveDataTypeable
+      DeriveFoldable
+      DeriveFunctor
+      DeriveGeneric
+      DeriveLift
+      DeriveTraversable
+      DerivingStrategies
+      DisambiguateRecordFields
+      DoAndIfThenElse
+      DuplicateRecordFields
+      EmptyDataDecls
+      ExistentialQuantification
+      FlexibleContexts
+      FlexibleInstances
+      FunctionalDependencies
+      GADTs
+      GeneralizedNewtypeDeriving
+      InstanceSigs
+      KindSignatures
+      LambdaCase
+      LiberalTypeSynonyms
+      MultiParamTypeClasses
+      MultiWayIf
+      NamedFieldPuns
+      OverloadedStrings
+      OverloadedLists
+      PackageImports
+      PartialTypeSignatures
+      PatternGuards
+      PatternSynonyms
+      PolyKinds
+      QuantifiedConstraints
+      QuasiQuotes
+      RankNTypes
+      RecordWildCards
+      RecursiveDo
+      ScopedTypeVariables
+      StandaloneDeriving
+      TemplateHaskell
+      TupleSections
+      TypeApplications
+      TypeFamilies
+      TypeFamilyDependencies
+      TypeOperators
+      TypeSynonymInstances
+      UndecidableInstances
+      UnicodeSyntax
+      ViewPatterns
+  ghc-options: -Wall -Wredundant-constraints -Wsimplifiable-class-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base ==4.*
+    , bytestring
+    , chiasma
+    , composition
+    , composition-extra
+    , conduit
+    , containers
+    , cornea
+    , data-default
+    , directory
+    , either
+    , exceptions
+    , filepath
+    , free
+    , hedgehog
+    , hslogger
+    , lens
+    , lifted-async
+    , lifted-base
+    , messagepack
+    , monad-control
+    , mono-traversable
+    , mtl
+    , nvim-hs
+    , path
+    , path-io
+    , prettyprinter
+    , prettyprinter-ansi-terminal
+    , process
+    , proteome
+    , regex-with-pcre
+    , relude >=0.7 && <1.2
+    , resourcet
+    , ribosome
+    , ribosome-test
+    , tasty
+    , tasty-hedgehog
+    , template-haskell
+    , text
+    , transformers
+    , typed-process
+    , unix
+    , unliftio
+  mixins:
+      base hiding (Prelude)
+    , proteome hiding (Proteome.Prelude)
+    , proteome (Proteome.Prelude as Prelude)
+  default-language: Haskell2010

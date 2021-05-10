@@ -1,2 +1,3 @@
-test/u/temp
-proteome.cabal
+/dist-newstyle/
+/result
+/packages/test/temp/
